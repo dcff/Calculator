@@ -1,0 +1,531 @@
+:root {
+    --background-color: #282828;
+    --body-color: #4a4e69;
+    --display-color: #22223b;
+    --font-button-color: #f2e9e4;
+    --font-display-color: #f2e9e4;
+    --border-color: #f2e9e4;
+    --button-digit-color: #9a8c98;
+    --button-logo-color: #9a8c98;
+    --button-op-color: #c9ada7;
+    --button-misc-color: #c9ada7;
+}
+
+* {
+    margin: 0 auto;
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.main {
+    justify-content: center;
+    align-items: center;
+    width: 340px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--body-color);
+    /* background: linear-gradient(45deg, #222843, var(--body-color)); */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.main_button {
+    display: flex;
+    flex-direction: row;
+    min-width: 340px;
+    flex-wrap: wrap;
+}
+
+.full_calc {
+    box-sizing: border-box;
+    border-radius: 7.5px;
+    border: solid var(--border-color) 1px;
+    width: 330px;
+    height: 50px;
+    margin: 5px 10px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    font-size: 1em;
+    color: var(--font-display-color);
+    background-color: var(--display-color);
+    letter-spacing: 0.1em;
+    overflow: scroll;
+    direction: rtl;
+}
+
+.display1 {
+    box-sizing: border-box;
+    border-radius: 7.5px;
+    border: solid var(--border-color) 1px;
+    width: 330px;
+    height: 100px;
+    margin: 5px 10px;
+    padding: 0 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+
+    font-size: 2em;
+    color: var(--font-display-color);
+    background-color: var(--display-color);
+    /* text-align: right; */
+    overflow: scroll;
+}
+
+.display {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 7.5px;
+    margin: 5px 10px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    border: solid var(--border-color) 1px;
+    font-size: 2em;
+    width: 330px;
+    height: 100px;
+}
+
+.display-content {
+    position: relative;
+    /* padding: 0 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 330px;
+    height: 100px;
+    color: var(--font-display-color);
+    z-index: 2;
+    overflow: scroll;
+
+}
+
+.display-overlay {
+    position: absolute;
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 328px;
+    height: 98px;
+    border-radius: 5.5px;
+    color: var(--font-display-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--display-color);
+    z-index: 1;
+}
+
+.display1:before {
+    content: attr(id);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 328px;
+    height: 98px;
+    border-radius: 5.5px;
+    color: var(--font-display-color);
+    background-color: var(--button-op-color);
+
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: solid var(--border-color) 1px;
+    width: 75px;
+    height: 75px;
+    border-radius: 10%;
+    margin: 5px;
+    font-size: 1.5em;
+    color: var(--font-button-color);
+    user-select: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 0 0 35px var(--border-color);
+    transition: 0.2s;
+    transform: rotate(.5turn);
+}
+
+#num1::before {
+    content: '1';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num2::before {
+    content: '2';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num3::before {
+    content: '3';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num4::before {
+    content: '4';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num5::before {
+    content: '5';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num6::before {
+    content: '6';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num7::before {
+    content: '7';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num8::before {
+    content: '8';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num9::before {
+    content: '9';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#num0::before {
+    content: '0';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#add::before {
+    content: '+';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-op-color);
+}
+
+#divide::before {
+    content: '÷';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-op-color);
+}
+
+#mult::before {
+    content: '*';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-op-color);
+}
+
+#sub::before {
+    content: '-';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-op-color);
+}
+
+#equals::before {
+    content: '=';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-op-color);
+}
+
+#reset::before {
+    content: attr(title);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-misc-color);
+}
+
+#decimal::before {
+    content: '.';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-digit-color);
+}
+
+#percent::before {
+    content: '%';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-misc-color);
+}
+
+#sign::before {
+    content: '+/-';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-misc-color);
+}
+
+#logo::before {
+    content: '❅';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    border-radius: 10%;
+    background-color: var(--button-logo-color);
+}
+
+
+
+#reset {
+    order: 1;
+}
+
+#sign {
+    order: 2;
+}
+
+#percent {
+    order: 3;
+}
+
+#divide {
+    order: 4;
+}
+
+#num1,
+#num2,
+#num3,
+#mult {
+    order: 5;
+}
+
+#num4,
+#num5,
+#num6,
+#sub {
+    order: 6;
+}
+
+#num7,
+#num8,
+#num9,
+#add {
+    order: 7;
+}
+
+#logo {
+    order: 8;
+}
+
+#num0,
+#decimal,
+#equals {
+    order: 9;
+}
+
+@media (width > 800px) {
+    .main {
+        width: 425px;
+        /* background-color: var(--body-color); */
+        background: linear-gradient(45deg, #562d23, var(--body-color));
+    }
+
+    .full_calc,
+    .display,
+    .display-content {
+        width: 415px;
+    }
+
+    .display-overlay {
+
+        width: 413px;
+
+    }
+
+    #reset {
+        order: 2;
+    }
+
+    #sign {
+        order: 5;
+    }
+
+    #percent {
+        order: 8;
+    }
+
+    #divide {
+        order: 3;
+    }
+
+    #mult {
+        order: 6;
+    }
+
+    #num1,
+    #num2,
+    #num3 {
+        order: 7;
+    }
+
+    #sub {
+        order: 9;
+    }
+
+    #num4,
+    #num5,
+    #num6 {
+        order: 4;
+    }
+
+    #add {
+        order: 12;
+    }
+
+    #num7,
+    #num8,
+    #num9 {
+        order: 1;
+    }
+
+    #logo {
+        order: 10;
+    }
+
+    #num0,
+    #decimal,
+    #equals {
+        order: 11;
+    }
+
+
+}
